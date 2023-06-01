@@ -1,0 +1,69 @@
+﻿@model CupcakeMVC.ViewModel.UserCommentViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="~/css/home.css">
+    <title>Comment Controller</title>
+    <style>
+
+        body {
+            /*background-color: pink;
+					padding-left:100px;*/
+        }
+
+        .page {
+            background-image: url("../img/cake.jpg");
+           /* background-color: lightpink;
+					width: 1500px;*/
+            height: 700px;
+            padding: 0px;
+            background-size: cover;
+            position: relative;
+        }
+        tr, td {
+            width: 200px;
+            height: 50px;
+        }
+        #center{
+           
+            width:600px;
+            margin:auto;
+        }
+
+    </style>
+
+</head>
+ <body>
+    <hr />
+    <div class="page">
+        <div style="text-align:center; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; float:left;">
+            <h2>Old Comments</h2>
+            @await Component.InvokeAsync("CommentList")
+        </div>
+ 
+    <h2 style="color:#fff">Cupcake</h2>
+        <table id="center" class="table table-bordered">
+
+            <tr>
+                <td>
+                    <h1> @Model.userinfo.Name </h1>
+                </td>
+            </tr>
+        
+                @foreach (var item in Model.comments)
+                    {
+                        <tr>
+                            <td>
+						<b>@item.Comments</b>
+                            </td>
+                        </tr>
+                       
+                    }
+  </table>
+   
+</body>
+</html>

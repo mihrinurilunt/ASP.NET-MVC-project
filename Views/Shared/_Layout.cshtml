@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Cupcake</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/CupcakeMVC.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/navigation.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <div id="navigation">
+        <p class="cupcake"><a style="vertical-align: baseline;font-size: 135px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; position: relative;" asp-area="" asp-controller="Home" asp-action="Index">CUPCAKE.</a></p>
+        <ul id="nav">
+            <li><a asp-area="" asp-controller="Dessert" asp-action="Index">Desserts</a></li>
+            <li><a asp-area="" asp-controller="Drinks" asp-action="Index">Drinks </a></li>
+            <li><a asp-area="" asp-controller="DoubleMenu" asp-action="Index">Promotional Menus </a></li>
+            <li><a asp-area="" asp-controller="Comment" asp-action="Index">Comments </a></li>
+        </ul>
+
+    </div>
+
+
+    <div>
+        @RenderBody()
+    </div>
+
+    @*<div id="footer">
+
+        <p>Copyright 2023 by SUGAR & SPYKE </p>
+
+    </div>*@
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

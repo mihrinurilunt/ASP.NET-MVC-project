@@ -1,0 +1,16 @@
+﻿@model IEnumerable<CupcakeMVC.Models.UserComment>
+
+ <table class="table table-bordered">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+        </tr>
+   
+    @foreach(var item in Model)
+    {
+        <tr>
+          <td>@item.ID</td>
+          <td>@item.UserName</td>
+        </tr>
+    }
+</table>
